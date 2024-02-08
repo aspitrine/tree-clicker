@@ -1,5 +1,13 @@
 <script setup lang="ts">
-const { game, click, isClicked } = useGame()
+const { game, click, isClicked, dps, dpc, start } = useGame()
+
+onMounted(() => {
+  start()
+})
+
+onUnmounted(() => {
+  stop()
+})
 </script>
 
 <template>
@@ -14,6 +22,18 @@ const { game, click, isClicked } = useGame()
         </p>
         <p class="text-lg">
           Bois: {{ game.money }}
+        </p>
+        <p class="flex justify-center gap-2">
+          Rendement par seconde:
+          <span class="flex items-center text-blue-500">
+            {{ dps }} <UIcon name="i-mdi-pine-tree" /> /s
+          </span>
+        </p>
+        <p class="flex justify-center gap-2">
+          Rendement par clic:
+          <span class="text-blue-500">
+            {{ dpc }} <UIcon name="i-mdi-pine-tree" />
+          </span>
         </p>
         <UButton
           icon="i-mdi-pine-tree" variant="ghost" :class="{

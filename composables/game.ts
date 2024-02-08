@@ -62,19 +62,26 @@ export function useGame() {
     return items.reduce((acc, item) => acc + item.level * item.baseDamage, 0)
   }
 
-  onMounted(() => {
+  const start = () => {
     interval.value = setInterval(() => {
       game.value.money += getCurrentDammageAmount(true)
     }, 1000)
-  })
+  }
 
-  onUnmounted(() => {
+  const stop = () => {
     clearInterval(interval.value)
-  })
+  }
+
+  const dps = computed(() => getCurrentDammageAmount(true))
+  const dpc = computed(() => getCurrentDammageAmount(false))
 
   return {
+    start,
+    stop,
     game: readonly(game),
     isClicked: readonly(isClicked),
+    dps,
+    dpc,
     buyItem,
     getItemPrice,
     click() {
