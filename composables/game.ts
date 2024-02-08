@@ -1,3 +1,5 @@
+import { useLocalStorage } from '@vueuse/core'
+
 const isClicked = ref(false)
 type Interval = ReturnType<typeof setInterval>
 
@@ -40,11 +42,7 @@ export type GameItem = Readonly<typeof initialData.items[number]>
 
 export function useGame() {
   const interval = ref<Interval>()
-  const game = useCookie('game', {
-    default() {
-      return initialData
-    },
-  })
+  const game = useLocalStorage('game', initialData)
 
   const getItemPrice = (item: GameItem) => {
     return Math.round(item.basePrice * 1.15 ** item.level)
