@@ -5,7 +5,7 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "error-404.QC6lG7C1.js",
+    "file": "error-404.27snTjM2.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.10.1_eslint@8.56.0_typescript@5.3.3_vite@5.0.12/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -24,7 +24,7 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "error-500.QJ0wcDX6.js",
+    "file": "error-500.uEd5l4iu.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.10.1_eslint@8.56.0_typescript@5.3.3_vite@5.0.12/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -43,7 +43,7 @@ const client_manifest = {
     "prefetch": true,
     "preload": true,
     "css": [],
-    "file": "IconCSS.cVpXs8mU.js",
+    "file": "IconCSS.m1lvgrhJ.js",
     "imports": [
       "node_modules/.pnpm/nuxt@3.10.1_eslint@8.56.0_typescript@5.3.3_vite@5.0.12/node_modules/nuxt/dist/app/entry.js"
     ],
@@ -68,7 +68,7 @@ const client_manifest = {
       "node_modules/.pnpm/@nuxt+ui-templates@1.3.1/node_modules/@nuxt/ui-templates/dist/templates/error-404.vue",
       "node_modules/.pnpm/@nuxt+ui-templates@1.3.1/node_modules/@nuxt/ui-templates/dist/templates/error-500.vue"
     ],
-    "file": "entry.ezrwQd5Y.js",
+    "file": "entry._Eq800qA.js",
     "isEntry": true,
     "src": "node_modules/.pnpm/nuxt@3.10.1_eslint@8.56.0_typescript@5.3.3_vite@5.0.12/node_modules/nuxt/dist/app/entry.js",
     "_globalCSS": true

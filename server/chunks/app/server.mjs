@@ -5086,7 +5086,7 @@ function klona(x) {
 }
 const inlineConfig = {
   "nuxt": {
-    "buildId": "ebbda51c-f199-4660-85dd-06ea995841b1"
+    "buildId": "a92f7051-c3ac-4ac2-a815-c5de42e1ee50"
   },
   "ui": {
     "primary": "green",
