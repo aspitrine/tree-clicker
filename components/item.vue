@@ -14,21 +14,24 @@ const itemPrice = computed(() => getItemPrice(props.item))
 </script>
 
 <template>
-  <div>
-    <h3 class="text-xl font-bold">
-      {{ item.name }}
-    </h3>
-    <p class="font-bold text-blue-500">
-      Level: {{ item.level }}
-    </p>
-    <p>Dégât: {{ item.baseDamage * item.level }}</p>
-    <p>Price: {{ itemPrice }}</p>
-    <UButton
-      :color="item.level === 0 ? 'green' : 'blue'"
-      :disabled="game.money < itemPrice"
-      @click="buyItem(item)"
-    >
-      {{ item.level === 0 ? 'Acheter' : 'Améliorer' }}
-    </UButton>
+  <div class="mb-2 flex justify-center">
+    <div class="flex flex-col gap-2">
+      <h3 class="text-center text-xl font-bold">
+        {{ item.name }}
+      </h3>
+      <p>
+        Level: <span class="font-bold">{{ item.level }}</span>
+      </p>
+      <p>Dégât: {{ item.baseDamage * item.level }}</p>
+      <p>Price: {{ itemPrice }}</p>
+      <UButton
+        class="w-full justify-center"
+        :color="item.level === 0 ? 'green' : 'blue'"
+        :disabled="game.money < itemPrice"
+        @click="buyItem(item)"
+      >
+        {{ item.level === 0 ? 'Acheter' : 'Améliorer' }}
+      </UButton>
+    </div>
   </div>
 </template>

@@ -11,7 +11,7 @@ onUnmounted(() => {
 </script>
 
 <template>
-  <div class="grid h-screen grid-cols-2">
+  <div class="grid h-screen md:grid-cols-2">
     <section class="flex h-full items-center justify-center">
       <div class="text-center">
         <h1 class="text-4xl font-bold">
@@ -31,7 +31,7 @@ onUnmounted(() => {
         </p>
         <p class="flex justify-center gap-2">
           Rendement par clic:
-          <span class="text-blue-500">
+          <span class="flex items-center text-blue-500">
             {{ dpc }} <UIcon name="i-mdi-pine-tree" />
           </span>
         </p>
@@ -46,8 +46,10 @@ onUnmounted(() => {
         />
       </div>
     </section>
-    <section class="flex flex-col gap-2 bg-gray-700 p-2">
-      <Item v-for="item of game.items" :key="item.name" :item="item" />
+    <section class="bg-gray-700">
+      <div class="grid grid-cols-2 gap-2 p-2 md:grid-cols-3 md:gap-6">
+        <Item v-for="item of game.items" :key="item.name" :item="item" />
+      </div>
     </section>
   </div>
 </template>
