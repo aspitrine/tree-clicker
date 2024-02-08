@@ -11,6 +11,8 @@ const props = defineProps({
 const { game, buyItem, getItemPrice } = useGame()
 
 const itemPrice = computed(() => getItemPrice(props.item))
+const disabled = computed(() => game.value.money < itemPrice.value)
+const color = computed(() => props.item.level === 0 ? 'green' : 'blue')
 </script>
 
 <template>
@@ -22,12 +24,14 @@ const itemPrice = computed(() => getItemPrice(props.item))
       <p>
         Level: <span class="font-bold">{{ item.level }}</span>
       </p>
-      <p>Dégât: {{ item.baseDamage * item.level }}</p>
+      <p class="flex gap-1">
+        <span>Dégât: </span><span class="flex items-center">{{ item.baseDamage * item.level }} <UIcon name="i-mdi-pine-tree" /> <span v-if="item.auto">/s</span></span>
+      </p>
       <p>Price: {{ itemPrice }}</p>
       <UButton
         class="w-full justify-center"
-        :color="item.level === 0 ? 'green' : 'blue'"
-        :disabled="game.money < itemPrice"
+        :color="color"
+        :disabled="disabled"
         @click="buyItem(item)"
       >
         {{ item.level === 0 ? 'Acheter' : 'Améliorer' }}
